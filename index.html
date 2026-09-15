@@ -1,0 +1,301 @@
+<!doctype html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Дачний облік — садове товариство «Зелений Яр»</title>
+    <meta
+      name="description"
+      content="Внутрішній сервіс обліку платежів, тарифів і балансів садового товариства «Зелений Яр»."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Manrope:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --forest-900: #16281c;
+        --forest-700: #24422e;
+        --moss-500: #4a7856;
+        --soil-600: #7c5636;
+        --gold-500: #b8933a;
+        --parchment-100: #efe9d8;
+        --parchment-50: #f6f2e6;
+        --ink: #1c1c18;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        background: var(--parchment-50);
+        color: var(--ink);
+        font-family: "Manrope", sans-serif;
+        line-height: 1.55;
+      }
+
+      a {
+        color: var(--forest-700);
+      }
+      a:focus-visible,
+      button:focus-visible {
+        outline: 3px solid var(--gold-500);
+        outline-offset: 2px;
+      }
+
+      .wrap {
+        max-width: 1040px;
+        margin: 0 auto;
+        padding: 0 28px;
+      }
+
+      header.hero {
+        background: var(--forest-900);
+        color: var(--parchment-100);
+        padding: 72px 0 88px;
+      }
+
+      .eyebrow {
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 13px;
+        color: var(--gold-500);
+        letter-spacing: 0.02em;
+        margin: 0 0 18px;
+      }
+
+      h1 {
+        font-family: "Fraunces", serif;
+        font-weight: 500;
+        font-size: clamp(34px, 5vw, 52px);
+        line-height: 1.12;
+        margin: 0 0 22px;
+        max-width: 14ch;
+      }
+
+      .lede {
+        font-size: 19px;
+        max-width: 54ch;
+        color: #dfe6df;
+        margin: 0;
+      }
+
+      main {
+        padding: 64px 0 40px;
+      }
+
+      section + section {
+        margin-top: 56px;
+        padding-top: 56px;
+        border-top: 1px solid #ddd4b8;
+      }
+
+      h2 {
+        font-family: "Fraunces", serif;
+        font-weight: 500;
+        font-size: 26px;
+        margin: 0 0 20px;
+        color: var(--forest-900);
+      }
+
+      p {
+        max-width: 62ch;
+      }
+
+      .facts {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 28px 40px;
+        margin-top: 8px;
+      }
+
+      .fact dt {
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 12px;
+        color: var(--soil-600);
+        margin-bottom: 6px;
+      }
+
+      .fact dd {
+        margin: 0;
+        max-width: 42ch;
+      }
+
+      .access-list {
+        list-style: none;
+        padding: 0;
+        margin: 20px 0 0;
+        border-left: 3px solid var(--moss-500);
+      }
+
+      .access-list li {
+        padding: 4px 0 16px 20px;
+        max-width: 56ch;
+      }
+
+      .access-list strong {
+        color: var(--forest-900);
+      }
+
+      .cta-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 14px;
+        margin-top: 28px;
+      }
+
+      .btn {
+        display: inline-block;
+        padding: 13px 22px;
+        border-radius: 3px;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 15px;
+      }
+
+      .btn-primary {
+        background: var(--forest-900);
+        color: var(--parchment-50);
+      }
+
+      .btn-secondary {
+        background: transparent;
+        color: var(--forest-900);
+        border: 1px solid var(--forest-900);
+      }
+
+      footer {
+        border-top: 1px solid #ddd4b8;
+        padding: 32px 0 56px;
+        font-size: 14px;
+        color: #55503f;
+      }
+
+      footer a {
+        color: var(--forest-700);
+        font-weight: 600;
+      }
+
+      @media (max-width: 640px) {
+        .facts {
+          grid-template-columns: 1fr;
+        }
+        header.hero {
+          padding: 52px 0 60px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="hero">
+      <div class="wrap">
+        <p class="eyebrow">Садове товариство «Зелений Яр»</p>
+        <h1>Дачний облік — сервіс обліку платежів і балансів товариства</h1>
+        <p class="lede">
+          Внутрішній інструмент для ведення членських внесків, охорони,
+          електроенергії та особистих карток ділянок.
+        </p>
+      </div>
+    </header>
+
+    <main class="wrap">
+      <section>
+        <h2>Що це за сервіс</h2>
+        <p>
+          «Дачний облік» — це застосунок, яким садове товариство «Зелений Яр»
+          веде облік членських внесків, охорони та оплат за електроенергію. Він
+          рахує баланс кожної ділянки, зберігає тарифи по роках і формує звіти
+          для бухгалтера й правління.
+        </p>
+        <p>
+          Це не публічний сервіс — доступ до нього мають лише члени товариства
+          та адміністрація, кожен бачить тільки те, що стосується його ділянки.
+        </p>
+      </section>
+
+      <section>
+        <h2>Хто ним користується</h2>
+        <dl class="facts">
+          <div class="fact">
+            <dt>Власники ділянок</dt>
+            <dd>
+              Заходять через власний Google-акаунт і бачать картку своєї
+              ділянки: баланс, історію оплат і нарахувань.
+            </dd>
+          </div>
+          <div class="fact">
+            <dt>Бухгалтер (касир)</dt>
+            <dd>
+              Приймає й вносить оплати, формує звіти. Не керує тарифами й не
+              редагує картки ділянок.
+            </dd>
+          </div>
+          <div class="fact">
+            <dt>Адміністратор</dt>
+            <dd>
+              Повний доступ: тарифи, нарахування, картки ділянок, ролі
+              користувачів.
+            </dd>
+          </div>
+          <div class="fact">
+            <dt>Де зберігаються дані</dt>
+            <dd>
+              Основне сховище — Firebase Firestore. Google Таблиці
+              використовуються лише як резервна копія платежів.
+            </dd>
+          </div>
+        </dl>
+      </section>
+
+      <section>
+        <h2>Навіщо застосунку доступ до Google-акаунту</h2>
+        <ul class="access-list">
+          <li>
+            <strong>Вхід і визначення власника.</strong> Google-акаунт
+            використовується, щоб показати людині картку саме її ділянки — без
+            пароля, що зберігається на нашій стороні.
+          </li>
+          <li>
+            <strong>Резервні копії в Google Таблицях.</strong> Записи про оплати
+            й нарахування дублюються в таблицю товариства, щоб адміністрація
+            мала копію поза базою даних.
+          </li>
+        </ul>
+        <p>
+          Дані не використовуються для реклами й не передаються стороннім
+          сервісам. Детальніше — у
+          <a href="privacy.html">Політиці конфіденційності</a>.
+        </p>
+      </section>
+
+      <section>
+        <h2>Вхід у систему</h2>
+        <p>
+          Застосунок доступний членам товариства через Google-акаунт,
+          прив'язаний до їхньої ділянки. Посилання на вхід надає адміністрація
+          товариства.
+        </p>
+        <div class="cta-row">
+          <a class="btn btn-secondary" href="privacy.html"
+            >Політика конфіденційності</a
+          >
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="wrap">
+        <p>
+          Питання щодо сервісу або ваших даних — [вкажіть контактний email
+          адміністрації].
+        </p>
+        <p><a href="privacy.html">Політика конфіденційності</a></p>
+      </div>
+    </footer>
+  </body>
+</html>

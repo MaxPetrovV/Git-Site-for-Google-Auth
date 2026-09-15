@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Політика конфіденційності — Дачний облік</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Manrope:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --forest-900: #16281c;
+        --forest-700: #24422e;
+        --moss-500: #4a7856;
+        --soil-600: #7c5636;
+        --gold-500: #b8933a;
+        --parchment-100: #efe9d8;
+        --parchment-50: #f6f2e6;
+        --ink: #1c1c18;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        background: var(--parchment-50);
+        color: var(--ink);
+        font-family: "Manrope", sans-serif;
+        line-height: 1.6;
+      }
+
+      a {
+        color: var(--forest-700);
+      }
+      a:focus-visible {
+        outline: 3px solid var(--gold-500);
+        outline-offset: 2px;
+      }
+
+      .wrap {
+        max-width: 760px;
+        margin: 0 auto;
+        padding: 0 28px;
+      }
+
+      header {
+        background: var(--forest-900);
+        color: var(--parchment-100);
+        padding: 56px 0 60px;
+      }
+
+      .eyebrow {
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 13px;
+        color: var(--gold-500);
+        margin: 0 0 16px;
+      }
+
+      h1 {
+        font-family: "Fraunces", serif;
+        font-weight: 500;
+        font-size: clamp(28px, 4vw, 38px);
+        margin: 0 0 12px;
+      }
+
+      .updated {
+        color: #cfd6cf;
+        font-size: 14px;
+        margin: 0;
+      }
+
+      main {
+        padding: 48px 0 40px;
+      }
+
+      h2 {
+        font-family: "Fraunces", serif;
+        font-weight: 500;
+        font-size: 21px;
+        color: var(--forest-900);
+        margin: 40px 0 12px;
+      }
+
+      h2:first-child {
+        margin-top: 0;
+      }
+
+      p,
+      li {
+        max-width: 66ch;
+      }
+
+      ul {
+        padding-left: 20px;
+      }
+      li {
+        margin-bottom: 8px;
+      }
+
+      .note {
+        background: var(--parchment-100);
+        border-left: 3px solid var(--gold-500);
+        padding: 14px 18px;
+        font-size: 14px;
+        max-width: 60ch;
+        margin: 20px 0;
+      }
+
+      footer {
+        border-top: 1px solid #ddd4b8;
+        padding: 28px 0 56px;
+        font-size: 14px;
+        color: #55503f;
+      }
+
+      footer a {
+        font-weight: 600;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="wrap">
+        <p class="eyebrow">Садове товариство «Зелений Яр»</p>
+        <h1>Політика конфіденційності</h1>
+        <p class="updated">
+          Стосується сервісу «Дачний облік». Востаннє оновлено: [дата].
+        </p>
+      </div>
+    </header>
+
+    <main class="wrap">
+      <h2>Хто веде цей сервіс</h2>
+      <p>
+        «Дачний облік» — внутрішній застосунок садового товариства «Зелений Яр»
+        для обліку членських внесків, охорони, електроенергії та балансів
+        ділянок. Ним керує адміністрація товариства.
+      </p>
+
+      <h2>Які дані ми зберігаємо</h2>
+      <ul>
+        <li>Номер і площа ділянки;</li>
+        <li>ПІБ і телефон власника;</li>
+        <li>Email Google-акаунту, прив'язаного до ділянки (для входу);</li>
+        <li>Показники лічильника електроенергії;</li>
+        <li>Історія оплат, нарахувань і зміни тарифів.</li>
+      </ul>
+
+      <h2>Навіщо потрібен доступ до Google-акаунту</h2>
+      <p>
+        Коли власник ділянки заходить у застосунок через Google, ми
+        використовуємо email його акаунту лише для того, щоб показати картку
+        саме його ділянки — це заміняє окремий пароль. Ми також записуємо копії
+        оплат і нарахувань у Google Таблицю, яка належить товариству, як
+        резервну копію бази даних.
+      </p>
+      <p>
+        Ми не запитуємо доступ до листів, контактів, фото чи інших особистих
+        даних Google-акаунту, і не використовуємо ваші дані для реклами.
+      </p>
+
+      <h2>Де зберігаються дані</h2>
+      <p>
+        Основне сховище — Firebase Firestore (проєкт товариства). Google Таблиці
+        використовуються паралельно лише як резервна копія платежів, нарахувань
+        та історії тарифів.
+      </p>
+
+      <h2>Хто має доступ до даних</h2>
+      <ul>
+        <li>
+          Власник ділянки бачить лише картку своєї ділянки (або кількох, якщо
+          володіє кількома);
+        </li>
+        <li>
+          Бухгалтер товариства бачить платежі й баланси всіх ділянок, щоб
+          приймати оплати;
+        </li>
+        <li>
+          Адміністратор має повний доступ для керування тарифами, картками
+          ділянок і ролями.
+        </li>
+      </ul>
+      <p>
+        Дані не передаються та не продаються стороннім особам чи сервісам поза
+        товариством.
+      </p>
+
+      <h2>Зберігання та видалення даних</h2>
+      <p>
+        Дані зберігаються, поки ділянка перебуває на обліку в товаристві. Якщо
+        ви хочете переглянути, виправити або видалити свої дані, зверніться до
+        адміністрації товариства за контактами нижче.
+      </p>
+
+      <div class="note">
+        Це стандартний шаблон політики конфіденційності для товариства. Перед
+        публікацією перевірте, що опис відповідає реальному переліку дозволів
+        (OAuth-скоупів), які запитує застосунок у Google Cloud Console → OAuth
+        consent screen.
+      </div>
+
+      <h2>Контакти</h2>
+      <p>
+        З питань щодо цього сервісу та ваших даних звертайтеся: [вкажіть
+        контактний email адміністрації товариства].
+      </p>
+    </main>
+
+    <footer>
+      <div class="wrap">
+        <p><a href="index.html">← На головну</a></p>
+      </div>
+    </footer>
+  </body>
+</html>
